@@ -1,0 +1,12 @@
+#include<stdlib.h>
+#include<pwd.h>
+#include <sys/stat.h>
+
+struct stat info;
+stat(filename, &info);
+struct passwd *pw = getpwuid(info.st_uid);
+main ()
+{
+
+return pw->pw_name;
+}
